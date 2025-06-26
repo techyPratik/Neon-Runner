@@ -27,7 +27,7 @@ A fast-paced **endless runner game** built using HTML, CSS, and JavaScript. Coll
 
 *(Optional - upload screenshots to `assets/` folder and update below)*
 
-![Gameplay Screenshot](assets/runner-screenshot.png)
+![Gameplay Screenshot()
 
 ---
 
