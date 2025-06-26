@@ -6,7 +6,7 @@ A fast-paced **endless runner game** built using HTML, CSS, and JavaScript. Coll
 
 ## 🔗 Live Demo
 
-🎮 [Play Now](https://yourusername.github.io/neon-runner/)  
+🎮 [Play Now](https://techypratik.github.io/Neon-Runner/)  
 *(Replace with your actual GitHub Pages link)*
 
 ---
