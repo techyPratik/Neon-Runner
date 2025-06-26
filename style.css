@@ -1,0 +1,209 @@
+/* RESET */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: #000;
+  overflow: hidden;
+}
+
+/* Game Area */
+.game-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to top, #0a0a0a, #1a1a1a);
+  animation: scrollBg 3s linear infinite;
+  overflow: hidden;
+  transition: filter 0.3s ease;
+}
+
+@keyframes scrollBg {
+  0% { background-position-y: 0; }
+  100% { background-position-y: -100%; }
+}
+
+/* PLAYER */
+.player {
+  position: absolute;
+  bottom: 20px;
+  width: 60px;
+  height: 80px;
+  background: #00fff7;
+  border-radius: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: left 0.2s ease;
+  z-index: 10;
+  box-shadow: 0 0 20px #00fff7, 0 0 40px #00fff7;
+  animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+  0% { transform: translateX(-50%) scale(1); }
+  100% { transform: translateX(-50%) scale(1.05); }
+}
+
+/* OBSTACLES */
+.obstacle {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: #ff1744;
+  border-radius: 10px;
+  bottom: 100%;
+  animation: fall 3s linear forwards;
+  box-shadow: 0 0 15px #ff1744;
+  z-index: 5;
+}
+
+/* COINS */
+.coin {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: url('https://cdn-icons-png.flaticon.com/512/138/138292.png') no-repeat center;
+  background-size: contain;
+  animation: fall 3.5s linear forwards, sparkle 1.2s linear infinite;
+  bottom: 100%;
+  z-index: 4;
+}
+
+@keyframes sparkle {
+  0% { filter: brightness(1); transform: rotateY(0deg); }
+  50% { filter: brightness(1.6); }
+  100% { filter: brightness(1); transform: rotateY(360deg); }
+}
+
+@keyframes fall {
+  0% { bottom: 100%; }
+  100% { bottom: -80px; }
+}
+
+/* HUD */
+.hud {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 20;
+}
+
+.score, .coins, .speed {
+  color: #00ffe7;
+  font-size: 20px;
+  text-shadow: 0 0 5px #00ffe7;
+}
+
+/* SPEED BAR */
+.speed-bar-wrap {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 12px;
+  background: #1a1a1a;
+  border-radius: 8px;
+  border: 1px solid #00fff7;
+  overflow: hidden;
+  z-index: 15;
+}
+
+.speed-bar {
+  width: 5%;
+  height: 100%;
+  background: linear-gradient(to right, #00fff7, #00e6e6);
+  box-shadow: 0 0 10px #00fff7;
+  transition: width 0.4s ease;
+}
+
+/* CONTROLS */
+.controls {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  z-index: 50;
+}
+
+.controls button {
+  font-size: 28px;
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #00fff7;
+  border: 2px solid #00fff7;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #00fff7;
+}
+
+.controls button:active {
+  transform: scale(0.95);
+}
+
+/* PAUSE BUTTON */
+.pause-container {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  z-index: 25;
+}
+
+#pauseBtn {
+  background: none;
+  border: 2px solid #00fff7;
+  color: #00fff7;
+  font-size: 20px;
+  padding: 8px 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 8px #00fff7;
+  transition: background 0.3s;
+}
+
+#pauseBtn:hover {
+  background: rgba(0, 255, 247, 0.1);
+}
+
+/* GAME OVER SCREEN */
+.game-over {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(10,10,10,0.95);
+  padding: 30px;
+  border-radius: 12px;
+  color: white;
+  display: none;
+  text-align: center;
+  z-index: 100;
+  box-shadow: 0 0 15px #00fff7;
+}
+
+.game-over button {
+  margin-top: 15px;
+  padding: 10px 25px;
+  background: #00fff7;
+  color: #000;
+  border: none;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #00fff7;
+}
+
+.game-over button:hover {
+  background-color: #00e6d4;
+}
+
+/* PAUSED EFFECT */
+.paused .game-container {
+  filter: blur(3px);
+}

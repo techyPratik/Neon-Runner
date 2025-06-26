@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Subway Runner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HUD -->
+  <div class="hud">
+    <div id="score">Score: 0</div>
+    <div id="coinCount">Coins: 0</div>
+    <div class="pause-container">
+      <button id="pauseBtn">⏸</button>
+    </div>
+    <div id="speedLevel" class="speed">Speed: 1</div>
+  </div>
+
+  <!-- Game Area -->
+  <div class="game-container">
+    <div id="player" class="player"></div>
+    <div id="obstacles"></div>
+    <div id="coins"></div>
+  </div>
+
+  <!-- Speed Bar -->
+  <div class="speed-bar-wrap">
+    <div id="speedBar" class="speed-bar"></div>
+  </div>
+
+  <!-- Controls -->
+  <div class="controls">
+    <button onclick="moveLeft()">←</button>
+    <button onclick="moveRight()">→</button>
+  </div>
+
+  <!-- Game Over -->
+  <div id="gameOver" class="game-over">
+    <h2>Game Over</h2>
+    <p id="finalScore">Your Score</p>
+    <button id="restartBtn">Play Again</button>
+  </div>
+
+  <!-- Sounds -->
+  <audio id="coinSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_f8dd37f3c0.mp3?filename=collectcoin-6075.mp3"></audio>
+
+  <!-- JS Script Link -->
+  <script src="script.js"></script>
+</body>
+</html>
